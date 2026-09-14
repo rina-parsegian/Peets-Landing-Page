@@ -1,0 +1,246 @@
+/***** Custom Fonts *****/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --ff: "Poppins", sans-serif;
+  --primarybg: #ffffff;
+  --secondarybg: #f7f6f1;
+  --accent: #8c6330;
+  --spacer: #a6a6a6;
+  --text: #222222;
+  --animate: 0.3s ease-in-out;
+}
+
+/***** Reset *****/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  display: block;
+}
+
+body {
+  font-family: var(--ff);
+  color: var(--text);
+  font-weight: 300;
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/***** Promo Bar *****/
+.promo-bar .content-wrapper {
+  background-color: var(--accent);
+  color: var(--primarybg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-bar__text {
+  font-size: 0.875rem;
+  text-transform: capitalize;
+  padding: 0.375rem 0;
+  transition: var(--animate);
+  text-align: center;
+}
+
+.promo-bar__link {
+  text-decoration: underline;
+  color: var(--primarybg);
+  margin-left: 0.25rem;
+  transition: var(--animate);
+}
+
+.promo-bar__link:hover {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/***** Header *****/
+.header {
+  padding: 1rem;
+}
+
+.header .content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 40px;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.header__nav-link {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--animate);
+  display: inline-block;
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus {
+  color: var(--accent);
+}
+
+.header__btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: var(--animate);
+}
+
+.header__btn:hover {
+  transform: translateY(3px);
+  background-color: var(--text);
+  color: var(--primarybg);
+}
+
+.header__btn--login,
+.header__btn--cart {
+  color: var(--text);
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+/***** Header Mobile *****/
+.header__mobile {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 100;
+  display: none;
+}
+
+.header__mobile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 100;
+}
+
+.header__mobile-btn-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  transition: var(--animate);
+  border-radius: 5px;
+}
+
+.header__mobile-btn.active .bar-1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.header__mobile-btn.active .bar-2 {
+  opacity: 0;
+}
+
+.header__mobile-btn.active .bar-3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.header__mobile-nav {
+  position: fixed;
+  top: 105px;
+  right: -100%;
+  width: 100%;
+  height: calc(100vh - 105px);
+  padding: 2rem 1rem;
+  transition: var(--animate);
+  z-index: 99;
+  background-color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__mobile-nav.active {
+  right: 0;
+}
+
+.header__mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.header__mobile-nav-link {
+  color: var(--primarybg);
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.header__mobile-nav-link:hover,
+.header__mobile-nav-link:focus {
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  /***** Header Mobile *****/
+  .header__nav {
+    display: none;
+  }
+
+  .header__mobile {
+    display: flex;
+    order: 1;
+  }
+}
