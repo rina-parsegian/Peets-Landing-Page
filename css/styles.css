@@ -296,27 +296,6 @@ ul {
   object-fit: cover;
 }
 
-@media (max-width: 1024px) {
-  /***** Header Mobile *****/
-  .header__nav {
-    display: none;
-  }
-
-  .header__mobile {
-    display: flex;
-    order: 1;
-  }
-
-  /***** Hero Section *****/
-  .hero-section .content-wrapper {
-    flex-direction: column;
-  }
-
-  .hero-left {
-    order: 2;
-  }
-}
-
 /***** Product Section *****/
 .product-section {
   margin: 6.25rem 0;
@@ -400,6 +379,103 @@ ul {
   height: 1px;
   background-color: var(--spacer);
   margin: 1.25rem auto;
+}
+
+/***** Information Section *****/
+.information-section {
+  margin: 6.25rem 0;
+}
+
+.information-section .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.information-section__content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  margin: 1.875rem 0;
+}
+
+.information-section__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.information-section__text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+  text-align: center;
+  margin: 1.25rem 0;
+}
+
+.information-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 33.33%;
+  padding: 1.25rem;
+}
+
+.information-card__img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
+.information-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 1.25rem 0;
+  text-transform: uppercase;
+}
+
+.information-card__text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  /***** Header Mobile *****/
+  .header__nav {
+    display: none;
+  }
+
+  .header__mobile {
+    display: flex;
+    order: 1;
+  }
+
+  /***** Hero Section *****/
+  .hero-section .content-wrapper {
+    flex-direction: column;
+  }
+
+  .hero-left {
+    order: 2;
+  }
+}
+
+@media (max-width: 960px) {
+  .information-section__content {
+    padding: 0 2.5rem;
+  }
+
+  .information-card {
+    flex-basis: 100%;
+  }
 }
 
 @media (max-width: 768px) {
