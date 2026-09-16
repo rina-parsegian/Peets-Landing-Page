@@ -447,6 +447,79 @@ ul {
   text-align: center;
 }
 
+/***** Delivery Info Section *****/
+.delivery-info__section {
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondarybg);
+}
+
+.delivery-info__title {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 3.75rem 0 1.875rem;
+}
+
+.delivery-info {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 0 3.125rem;
+}
+
+.delivery-info__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 33.33%;
+  padding: 1.25rem;
+  position: relative;
+}
+
+.delivery-info__details-img {
+  width: 400px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.delivery-info__order {
+  position: relative;
+  top: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+}
+
+.delivery-info__order-circle {
+  color: var(--primarybg);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.delivery-info__details-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.delivery-info__details-text {
+  color: var(--text);
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.625rem 0;
+}
+
 @media (max-width: 1024px) {
   /***** Header Mobile *****/
   .header__nav {
@@ -466,9 +539,15 @@ ul {
   .hero-left {
     order: 2;
   }
+
+  /***** Delivery Info Section *****/
+  .delivery-info__details {
+    flex-basis: 50%;
+  }
 }
 
 @media (max-width: 960px) {
+  /***** Information Section *****/
   .information-section__content {
     padding: 0 2.5rem;
   }
@@ -479,6 +558,7 @@ ul {
 }
 
 @media (max-width: 768px) {
+  /***** Product Section *****/
   .product-section {
     padding: 0 0.875rem;
     margin: 4.668rem 0;
@@ -493,6 +573,16 @@ ul {
   .product__right {
     width: 100%;
     flex: 0 0 100%;
+  }
+
+  /***** Delivery Info Section *****/
+  .delivery-info__details {
+    flex-basis: 100%;
+    padding: 1.25rem 0;
+  }
+
+  .delivery-info__details-text {
+    width: 80%;
   }
 }
 
